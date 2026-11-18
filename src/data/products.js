@@ -62,9 +62,6 @@ const img = (slug) => [`/products/${slug}-1.jpg`, `/products/${slug}-2.jpg`];
 const PHOTOS = {
   'temple-themed-shirt': ['/products/temple-themed-shirt-1.jpg', '/products/temple-themed-shirt-2.jpg'],
   'sabarimala-back-print-shirt': ['/products/sabarimala-back-print-shirt-1.jpg'],
-  'dad-son-ayyappan-combo': ['/products/dad-son-combo-ayyappan-1.jpg'],
-  'kids-ayyappa-shirt': ['/products/kids-ayyappa-darshanam-1.jpg'],
-  'kids-printed-shirt': ['/products/kids-printed-shirt-1.jpg'],
 };
 const photos = (slug) => PHOTOS[slug] || img(slug);
 
@@ -140,55 +137,6 @@ const ALL_PRODUCTS = [
     details: ['Custom print', 'Made to order'],
   },
   {
-    id: 'dad-son-ayyappan-combo',
-    slug: 'dad-son-ayyappan-combo',
-    name: 'DAD & SON AYYAPPAN COMBO',
-    category: 'combos',
-    for: ['men', 'kids-boys'],
-    tagline: 'Matching shirts for father and son',
-    badge: 'Combo',
-    inStock: true,
-    price: 1399,
-    mrp: 1699,
-    sizes: ADULT_SIZES,
-    images: photos('dad-son-ayyappan-combo'),
-    reel: 'DdgEJAahQad',
-    description: 'Swami Ayyappan themed matching shirts for dad and son.',
-    details: ['Set of two shirts', 'Adult and kids sizes', 'DM for customisation'],
-  },
-  {
-    id: 'kids-ayyappa-shirt',
-    slug: 'kids-ayyappa-shirt',
-    name: 'KIDS AYYAPPA DARSHANAM SHIRT',
-    category: 'shirts',
-    for: ['kids-boys'],
-    tagline: 'Printed shirts for little devotees',
-    badge: 'Kids',
-    inStock: true,
-    price: 549,
-    mrp: 699,
-    sizes: KIDS_SIZES,
-    images: photos('kids-ayyappa-shirt'),
-    reel: 'DeZJ1w1hvVo',
-    description: 'Ayyappa darshanam printed shirt for kids, available in sizes 20 to 38.',
-    details: ['Sizes 20 to 38', 'Customisable print', 'DM for orders'],
-  },
-  {
-    id: 'kids-printed-shirt',
-    slug: 'kids-printed-shirt',
-    name: 'KIDS PRINTED SHIRT & MUND',
-    category: 'combos',
-    for: ['kids-boys'],
-    tagline: 'Festive kids shirt with gold motif print',
-    inStock: true,
-    price: 599,
-    mrp: 749,
-    sizes: KIDS_SIZES,
-    images: photos('kids-printed-shirt'),
-    description: 'A printed kids shirt styled with a kasavu mund for festivals and functions. Available in sizes 20 to 38.',
-    details: ['Sizes 20 to 38', 'Customisable print', 'DM for orders'],
-  },
-  {
     id: 'black-mund-combo',
     slug: 'black-mund-combo',
     name: 'CUSTOM PRINT BLACK MUND COMBO',
@@ -251,8 +199,83 @@ const ALL_PRODUCTS = [
   },
 ];
 
-// Products that have real photos come first (homepage shows the first few)
-export const PRODUCTS = [...ALL_PRODUCTS].sort((a, b) => (b.slug in PHOTOS) - (a.slug in PHOTOS));
+// ---------------------------------------------------------------------------
+// SEASONAL COLLECTIONS
+// ---------------------------------------------------------------------------
+export const COLLECTIONS = [
+  {
+    id: 'christmas',
+    name: 'Christmas Collection',
+    tagline: 'Festive and devotional prints for the season',
+    banner: '/products/christmas/christmas-collection-banner.jpg',
+  },
+];
+export const collectionName = (id) => COLLECTIONS.find((c) => c.id === id)?.name;
+
+// ⚠️  PRICES ARE PLACEHOLDERS (same as our other printed shirts) — confirm with the client.
+const xmas = (slug, name, tagline, description, extraImages = []) => ({
+  id: slug,
+  slug,
+  name,
+  category: 'shirts',
+  for: ['men'],
+  collection: 'christmas',
+  tagline,
+  badge: 'Christmas',
+  inStock: true,
+  price: 799,
+  mrp: 999,
+  sizes: ADULT_SIZES,
+  images: [`/products/christmas/${slug}${extraImages.length ? '-1' : ''}.jpg`, ...extraImages],
+  description,
+  details: ['Full colour print', 'Made to order in Trivandrum', 'Custom names or text on request'],
+});
+
+const CHRISTMAS = [
+  xmas('santas-village-red-shirt', "SANTA'S VILLAGE RED SHIRT", 'All-over Santa and snowy chapel print',
+    'A bold red shirt with a full colour Santa, gifts and a snowy chapel print across the front.'),
+  xmas('last-supper-navy-shirt', 'THE LAST SUPPER NAVY SHIRT', 'Devotional print under the guiding star',
+    'Navy shirt with The Last Supper printed across the front, lit by a glowing cross above.'),
+  xmas('mother-mary-sky-blue-shirt', 'MOTHER MARY SKY BLUE SHIRT', 'Mother Mary, lilies and the church',
+    'A sky blue shirt with Mother Mary in prayer, lilies and a church in the clouds.'),
+  xmas('cross-of-light-black-shirt', 'CROSS OF LIGHT BLACK SHIRT', 'The cross at sunrise',
+    'Black shirt with a glowing cross on the hill at sunrise, printed across the front.'),
+  xmas('santa-side-print-white-shirt', 'SANTA SIDE PRINT WHITE SHIRT', 'Santa peeking in with holly and berries',
+    'Clean white shirt with Santa and holly printed down the side, finished with red cuff detail.',
+    ['/products/christmas/santa-side-print-white-shirt-2.jpg']),
+  xmas('santa-stripe-maroon-shirt', 'SANTA STRIPE MAROON SHIRT', 'Santa face with a white racing stripe',
+    'Maroon shirt with a minimal Santa face and a white stripe down the front.'),
+  xmas('christmas-tree-maroon-shirt', 'CHRISTMAS TREE MAROON SHIRT', 'Christmas script, tree and reindeer',
+    'Maroon shirt with Christmas lettering, a line art tree and reindeer, and a white stripe.'),
+  xmas('christmas-eve-green-shirt', 'CHRISTMAS EVE GREEN SHIRT', "Santa's sleigh over a snowy cottage",
+    "Deep green shirt with Santa's sleigh across the moon and a snowy cottage at the hem."),
+  xmas('holy-night-navy-shirt', 'HOLY NIGHT NAVY SHIRT', 'Cross and snowy cottage print',
+    'Navy shirt with a red and white cross on the chest and a snowy cottage scene at the hem.'),
+  xmas('sleigh-night-white-shirt', 'SLEIGH NIGHT WHITE SHIRT', "Santa's sleigh and a red cottage",
+    "White shirt with Santa's sleigh across the moon and a red cottage among the pines."),
+  xmas('reindeer-winter-white-shirt', 'REINDEER WINTER WHITE SHIRT', 'Reindeer, snowflakes and pines',
+    'White shirt with a leaping reindeer, snowflakes and a winter cottage in line art.'),
+  xmas('he-is-risen-white-shirt', 'HE IS RISEN WHITE SHIRT', 'The risen Christ and the open tomb',
+    'White shirt with the risen Christ, the open tomb and lilies in warm sunrise colours.'),
+  xmas('good-shepherd-white-shirt', 'GOOD SHEPHERD WHITE SHIRT', 'Jesus holding the lamb',
+    'White shirt with Jesus the Good Shepherd holding a lamb, printed down one side.'),
+  xmas('calvary-sunrise-cream-shirt', 'CALVARY SUNRISE CREAM SHIRT', 'Three crosses at sunrise',
+    'Cream shirt with Jesus and the three crosses of Calvary against a golden sunrise.'),
+  xmas('crown-of-thorns-white-shirt', 'CROWN OF THORNS WHITE SHIRT', 'Half portrait, crown of thorns',
+    'White shirt with a half portrait of Jesus wearing the crown of thorns, printed down one side.'),
+  xmas('passion-black-shirt', 'PASSION BLACK SHIRT', 'Crown of thorns and the cross at dusk',
+    'Black shirt with Jesus in the crown of thorns and the cross on the hill at dusk.'),
+];
+
+// Order: existing products with real photos, then the Christmas collection, then items still awaiting photos
+const hasPhoto = (p) => p.slug in PHOTOS;
+// True when a product has a real photo (not the branded placeholder tile)
+export const hasRealPhoto = (p) => p.collection === 'christmas' || hasPhoto(p);
+export const PRODUCTS = [
+  ...ALL_PRODUCTS.filter(hasPhoto),
+  ...CHRISTMAS,
+  ...ALL_PRODUCTS.filter((p) => !hasPhoto(p)),
+];
 
 export const FAQS = [
   {

@@ -8,7 +8,7 @@ import VideoGallery from '../components/VideoGallery';
 import ProductCard from '../components/ProductCard';
 import UspBento from '../components/UspBento';
 import FaqAccordion from '../components/FaqAccordion';
-import { PRODUCTS, SECTION_LINKS, BRAND } from '../data/products';
+import { PRODUCTS, SECTION_LINKS, BRAND, COLLECTIONS, hasRealPhoto } from '../data/products';
 import { HERO_VIDEO } from '../data/videos';
 import WhatsAppIcon from '../components/WhatsAppIcon';
 
@@ -75,7 +75,11 @@ function HeroVideoBackground({ src, poster }) {
 }
 
 export default function Home() {
-  const collection = PRODUCTS.slice(0, 8);
+  const christmas = COLLECTIONS.find((c) => c.id === 'christmas');
+  const christmasProducts = PRODUCTS.filter((p) => p.collection === 'christmas');
+  // Only products with real photos, skipping the 8 Christmas shirts already shown in the section above
+  const shownAbove = new Set(christmasProducts.slice(0, 8).map((p) => p.id));
+  const collection = PRODUCTS.filter((p) => hasRealPhoto(p) && !shownAbove.has(p.id)).slice(0, 8);
   const headline = ['PRINT', 'WHATEVER', 'YOU', 'IMAGINE.'];
   const isDesktop = useIsDesktop();
 
@@ -204,6 +208,59 @@ export default function Home() {
         </div>
       </section>
 
+      {/* SEASONAL: CHRISTMAS COLLECTION */}
+      <section className="py-16 md:py-24 bg-ink text-white overflow-hidden">
+        <div className="max-w-[1320px] mx-auto px-4 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-10 md:mb-14">
+            <motion.div {...rise} className="lg:col-span-7">
+              <img
+                src={christmas.banner}
+                alt="Cocktail Mens Wear Christmas Collection: six printed shirts"
+                loading="lazy"
+                className="w-full aspect-[1312/1199] object-cover border border-white/10"
+              />
+            </motion.div>
+            <motion.div {...rise} className="lg:col-span-5">
+              <span className="inline-block bg-brand text-ink px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.2em] mb-3">
+                New this season
+              </span>
+              <h2 className="font-display text-4xl md:text-6xl uppercase leading-[1.02]">
+                The Christmas <span className="text-brand">Collection</span>
+              </h2>
+              <p className="text-[15px] text-white/75 leading-relaxed mt-5 max-w-md">
+                {christmasProducts.length} men's shirts for the season. Santa, reindeer and snowy nights, plus devotional
+                prints of Jesus, Mother Mary and the cross. Printed to order in Trivandrum.
+              </p>
+              <Link
+                to="/shop?collection=christmas"
+                className="inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-full bg-brand text-ink font-bold text-[13px] uppercase tracking-widest hover:bg-white active:scale-95 transition-all group"
+              >
+                Shop the collection <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </motion.div>
+          </div>
+
+          {/* Swipeable on mobile, grid on desktop */}
+          <div className="flex lg:grid lg:grid-cols-4 gap-3 md:gap-4 overflow-x-auto lg:overflow-visible no-scrollbar snap-x snap-mandatory -mx-4 px-4 md:mx-0 md:px-0 text-ink">
+            {christmasProducts.slice(0, 8).map((p) => (
+              <div key={p.id} className="w-[46%] sm:w-[31%] lg:w-auto shrink-0 snap-start">
+                <ProductCard product={p} />
+              </div>
+            ))}
+          </div>
+          {christmasProducts.length > 8 && (
+            <div className="text-center mt-8">
+              <Link
+                to="/shop?collection=christmas"
+                className="text-[13px] font-bold uppercase tracking-wider text-white underline decoration-brand decoration-[3px] underline-offset-4 hover:text-brand"
+              >
+                See all {christmasProducts.length} Christmas shirts
+              </Link>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* WHAT WE DO (service cards) */}
       <UspBento />
 
@@ -235,7 +292,7 @@ export default function Home() {
       <section className="py-20 md:py-28 bg-white">
         <div className="max-w-[1320px] mx-auto px-4 md:px-10 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <motion.div {...rise} className="grid grid-cols-2 gap-3 md:gap-4">
-            <img src="/story/model_temple_shirt.jpg" alt="Temple themed printed shirt worn by a customer" loading="lazy" className="w-full aspect-[3/4] object-cover" />
+            <img src="/products/temple-themed-shirt-1.jpg" alt="Temple themed printed shirt worn by a customer" loading="lazy" className="w-full aspect-[3/4] object-cover" />
             <img src="/story/print_craft_detail.jpg" alt="Close up of an Ayyappa Darshanam print on a black shirt" loading="lazy" className="w-full aspect-[3/4] object-cover mt-10" />
           </motion.div>
           <motion.div {...rise}>

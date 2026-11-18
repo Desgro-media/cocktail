@@ -5,9 +5,9 @@ import { ArrowRight } from 'lucide-react';
 
 const SERVICES = [
   { title: 'PRINTED SHIRTS', text: 'Temple, festival and devotional themes with front or back prints.', to: '/shop?category=shirts', image: '/products/temple-themed-shirt-1.jpg', pos: 'object-top' },
-  { title: 'SHIRT & MUND COMBOS', text: 'Matching sets and dad and son combos for functions and poojas.', to: '/shop?category=combos', image: '/products/dad-son-combo-ayyappan-1.jpg', pos: 'object-center' },
-  { title: 'KIDS PRINTED SHIRTS', text: 'Festive printed shirts for kids in sizes 20 to 38.', to: '/shop?for=kids', image: '/products/kids-ayyappa-darshanam-1.jpg', pos: 'object-top' },
-  { title: 'CAPS, T-SHIRTS & HOODIES', text: 'Your logo, name or artwork on caps, tees and hoodies.', to: '/shop?category=caps', image: '/story/backdrop_workshop.jpg', pos: 'object-center' },
+  { title: 'CHRISTMAS COLLECTION', text: 'Santa, reindeer and devotional prints for the season.', to: '/shop?collection=christmas', image: '/products/christmas/santas-village-red-shirt.jpg', pos: 'object-center' },
+  { title: 'SHIRT & MUND COMBOS', text: 'Matching shirt and mund sets for functions and poojas.', to: '/shop?category=combos', image: '/products/sabarimala-back-print-shirt-1.jpg', pos: 'object-top' },
+  { title: 'CAPS, T-SHIRTS & HOODIES', text: 'Your logo, name or artwork on caps, tees and hoodies.', to: '/shop?category=caps', image: '/story/print_craft_detail.jpg', pos: 'object-center' },
 ];
 
 export default function UspBento() {
