@@ -59,7 +59,7 @@ export default function CartDrawer() {
             {/* Header */}
             <div className="p-5 border-b border-line flex items-center justify-between bg-mist/60">
               <div className="flex items-center gap-2">
-                <ShoppingBag className="w-5 h-5 text-brandRed" />
+                <ShoppingBag className="w-5 h-5 text-ink" />
                 <h3 className="font-display text-xl text-ink">
                   YOUR BAG ({totalCount})
                 </h3>
@@ -113,7 +113,7 @@ export default function CartDrawer() {
                   <Link
                     to="/shop?filter=Bestsellers"
                     onClick={closeCart}
-                    className="flex-1 py-3 px-4 rounded-full bg-ink text-white font-bold text-[12px] uppercase tracking-wider hover:bg-brandRed transition-colors text-center"
+                    className="flex-1 py-3 px-4 rounded-full bg-ink text-white font-bold text-[12px] uppercase tracking-wider hover:bg-brand hover:text-ink transition-colors text-center"
                   >
                     Bestsellers
                   </Link>
@@ -159,7 +159,7 @@ export default function CartDrawer() {
                             <Link
                               to={`/product/${item.slug}`}
                               onClick={closeCart}
-                              className="font-display text-lg text-ink hover:text-brandRed transition-colors block truncate"
+                              className="font-display text-lg text-ink hover:underline decoration-brand decoration-[3px] underline-offset-4 block truncate"
                             >
                               {item.name}
                             </Link>
@@ -169,7 +169,7 @@ export default function CartDrawer() {
                           </div>
                           <button
                             onClick={() => removeItem(item.key)}
-                            className="text-muted hover:text-brandRed p-1 transition-colors"
+                            className="text-muted hover:text-danger p-1 transition-colors"
                             title="Remove item"
                           >
                             <Trash2 className="w-4 h-4" />
@@ -238,7 +238,7 @@ export default function CartDrawer() {
                       </div>
                       <button
                         onClick={(e) => addToCart(upsellProduct, upsellProduct.sizes[0], 1, e)}
-                        className="px-3 py-1.5 rounded-full bg-ink text-white font-bold text-[11px] uppercase tracking-wider hover:bg-brandRed transition-colors shrink-0"
+                        className="px-3 py-1.5 rounded-full bg-ink text-white font-bold text-[11px] uppercase tracking-wider hover:bg-brand hover:text-ink transition-colors shrink-0"
                       >
                         + Add
                       </button>
@@ -261,13 +261,13 @@ export default function CartDrawer() {
                 </div>
 
                 <div className="flex items-center gap-1.5 text-[11px] text-muted">
-                  <ShieldCheck className="w-3.5 h-3.5 text-brandRed" />
+                  <ShieldCheck className="w-3.5 h-3.5 text-ink" />
                   <span>Taxes included. Free insured delivery over ₹999.</span>
                 </div>
 
                 <button
                   onClick={handleCheckout}
-                  className="w-full py-4 rounded-full bg-button-grad text-white font-bold text-[14px] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all shadow-lg shadow-brandRed/20 flex items-center justify-center gap-2 group cursor-pointer"
+                  className="w-full py-4 rounded-full bg-button-grad text-ink font-bold text-[14px] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all shadow-lg shadow-black/10 flex items-center justify-center gap-2 group cursor-pointer"
                 >
                   <span>PROCEED TO CHECKOUT</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

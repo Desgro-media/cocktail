@@ -45,7 +45,7 @@ export default function FaqPage() {
               className={`shrink-0 whitespace-nowrap px-5 py-2 rounded-full text-[12.5px] font-bold uppercase tracking-wider transition-all cursor-pointer ${
                 activeCategory === cat
                   ? 'bg-ink text-white shadow-md'
-                  : 'bg-white text-ink border border-line hover:border-brandRed'
+                  : 'bg-white text-ink border border-line hover:border-ink'
               }`}
             >
               {cat}
@@ -61,7 +61,7 @@ export default function FaqPage() {
               <div
                 key={faq.id}
                 className={`transition-colors duration-400 border border-line ${
-                  isOpen ? 'bg-brandRed text-white border-brandRed shadow-lg' : 'bg-white text-ink hover:border-brandRed'
+                  isOpen ? 'bg-ink text-white border-ink shadow-lg' : 'bg-white text-ink hover:border-ink'
                 }`}
               >
                 <button
@@ -77,7 +77,7 @@ export default function FaqPage() {
                   </span>
                   <div
                     className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 transition-transform duration-300 ${
-                      isOpen ? 'bg-white text-brandRed rotate-180' : 'bg-mist text-ink'
+                      isOpen ? 'bg-brand text-ink rotate-180' : 'bg-mist text-ink'
                     }`}
                   >
                     {isOpen ? <Minus className="w-4 h-4" /> : <Plus className="w-4 h-4" />}

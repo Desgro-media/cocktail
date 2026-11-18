@@ -32,7 +32,7 @@ export default function Footer() {
             <ul className="space-y-0 md:space-y-2.5 text-[15px] md:text-[14px]">
               {SECTION_LINKS.map((c) => (
                 <li key={c.id}>
-                  <Link to={`/shop?for=${c.id}`} className="block py-2 md:py-0 md:inline text-white/70 hover:text-brandRed transition-colors">{c.name}</Link>
+                  <Link to={`/shop?for=${c.id}`} className="block py-2 md:py-0 md:inline text-white/70 hover:text-brand transition-colors">{c.name}</Link>
                 </li>
               ))}
             </ul>
@@ -41,11 +41,11 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <h4 className="font-display text-lg mb-4">Help</h4>
             <ul className="space-y-0 md:space-y-2.5 text-[15px] md:text-[14px]">
-              <li><Link to="/about" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brandRed transition-colors">About Us</Link></li>
-              <li><Link to="/faq" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brandRed transition-colors">FAQs</Link></li>
-              <li><Link to="/contact" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brandRed transition-colors">Contact</Link></li>
-              <li><Link to="/policy/shipping" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brandRed transition-colors">Shipping Policy</Link></li>
-              <li><Link to="/policy/returns" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brandRed transition-colors">Returns Policy</Link></li>
+              <li><Link to="/about" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brand transition-colors">About Us</Link></li>
+              <li><Link to="/faq" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brand transition-colors">FAQs</Link></li>
+              <li><Link to="/contact" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brand transition-colors">Contact</Link></li>
+              <li><Link to="/policy/shipping" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brand transition-colors">Shipping Policy</Link></li>
+              <li><Link to="/policy/returns" className="block py-2 md:py-0 md:inline text-white/70 hover:text-brand transition-colors">Returns Policy</Link></li>
             </ul>
             <p className="text-[13px] text-white/50 mt-5">{BRAND.city}</p>
           </div>

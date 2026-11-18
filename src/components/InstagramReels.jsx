@@ -20,7 +20,7 @@ export default function InstagramReels() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-brandRed animate-pulse" />
+              <span className="w-2.5 h-2.5 rounded-full bg-brand animate-pulse" />
               <span className="text-[12px] font-bold text-white/70 uppercase tracking-[0.2em]">REAL ORDERS • REAL PRINTS</span>
             </div>
             <h2 className="font-display text-4xl md:text-5xl uppercase tracking-wider">WATCH IT, THEN WEAR IT</h2>

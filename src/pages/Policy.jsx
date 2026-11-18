@@ -95,7 +95,7 @@ export default function Policy() {
               className={`px-4 py-2 rounded-full text-[12px] font-bold uppercase tracking-wider transition-colors ${
                 currentKey === tab.key
                   ? 'bg-ink text-white'
-                  : 'bg-white text-ink border border-line hover:border-brandRed'
+                  : 'bg-white text-ink border border-line hover:border-ink'
               }`}
             >
               {tab.label}
@@ -105,7 +105,7 @@ export default function Policy() {
 
         {/* Content Header */}
         <div className="mb-12">
-          <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-brandRed block mb-2">
+          <span className="inline-block bg-brand text-ink px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.22em] mb-2">
             {policy.subtitle} · Last Updated {policy.updated}
           </span>
           <h1 className="font-display text-4xl sm:text-5xl text-ink leading-tight">

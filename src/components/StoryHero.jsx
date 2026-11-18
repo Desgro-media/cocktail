@@ -157,7 +157,7 @@ export default function StoryHero() {
         <span className="text-gold">⌖</span> {activeChapter.studioNote}
       </div>
       <div className="absolute top-6 right-8 z-[3] hidden lg:flex items-center gap-2 text-[10px] tracking-[0.25em] text-white/30 uppercase font-mono">
-        <Compass className="w-3 h-3 text-brandRed" /> TRIVANDRUM ATELIER • KERALA
+        <Compass className="w-3 h-3 text-brand" /> TRIVANDRUM ATELIER • KERALA
       </div>
 
       {/* 5. Living Particle & Fiber Atmosphere Canvas */}
@@ -266,7 +266,7 @@ export default function StoryHero() {
             <div className="mt-10 pt-6 border-t border-white/10 max-w-xl">
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2 text-[11px] uppercase tracking-[0.2em] font-mono text-white/60">
-                  <span className="w-2 h-2 rounded-full bg-brandRed animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-brand animate-pulse" />
                   <span>THE JOURNEY BEHIND EVERY THREAD</span>
                 </div>
                 <button
@@ -294,7 +294,7 @@ export default function StoryHero() {
                       {/* Active chapter progress fill line */}
                       {isActive && (
                         <div
-                          className="absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-gold via-brandRed to-gold transition-all duration-75"
+                          className="absolute bottom-0 left-0 h-[2.5px] bg-gradient-to-r from-gold via-brand to-gold transition-all duration-75"
                           style={{ width: `${progress}%` }}
                         />
                       )}
@@ -374,7 +374,7 @@ export default function StoryHero() {
                   </p>
                   <div className="flex items-center justify-between mt-3 text-[10px] uppercase font-mono tracking-wider text-white/45">
                     <span className="flex items-center gap-1">
-                      <MapPin className="w-3 h-3 text-brandRed" /> Trivandrum, Kerala
+                      <MapPin className="w-3 h-3 text-ink" /> Trivandrum, Kerala
                     </span>
                     <span className="text-gold/90 font-bold">100% Combed Cotton</span>
                   </div>

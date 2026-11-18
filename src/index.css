@@ -49,11 +49,9 @@
   --mist: #F5F4F2;
   --line: #E7E4E0;
   --muted: #6C6763;
-  --brand-red: #C8151E;
-  --deep-red: #741B13;
-  --ember: #D94A1C;
-  --gold: #EAB94F;
-  --wine: #2E0001;
+  --brand: #FED700;
+  --gold: #FED700;
+  --danger: #D92D20;
   --footer-black: #121010;
   --whatsapp: #1FAA59;
   --ease-luxury: cubic-bezier(0.2, 0.75, 0.2, 1);
@@ -81,11 +79,11 @@ body {
   background: #F5F4F2;
 }
 ::-webkit-scrollbar-thumb {
-  background: #C8151E;
+  background: #0B0B0B;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #741B13;
+  background: #FED700;
 }
 
 /* Hide scrollbars on horizontal chip/carousel rows (still swipeable) */
@@ -146,7 +144,7 @@ svg.lucide {
 }
 
 .animate-announcement-gradient {
-  background: linear-gradient(90deg, #741B13, #C8151E, #D94A1C, #EAB94F, #C8151E);
+  background: linear-gradient(90deg, #FED700, #FFE34D, #FED700, #FFE34D, #FED700);
   background-size: 300% 300%;
   animation: shiftGradient 12s ease-in-out infinite alternate;
 }

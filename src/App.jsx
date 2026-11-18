@@ -30,7 +30,7 @@ export default function App() {
   const location = useLocation();
 
   return (
-    <div className="flex flex-col min-h-screen relative selection:bg-brandRed selection:text-white">
+    <div className="flex flex-col min-h-screen relative selection:bg-brand selection:text-ink">
       <Preloader />
       <ScrollToTop />
 

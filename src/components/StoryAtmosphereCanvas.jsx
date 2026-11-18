@@ -36,8 +36,8 @@ export default function StoryAtmosphereCanvas({ chapter = 0 }) {
     // Ch 1: Craft (crimson, ember & gold)
     // Ch 2: Celebration (warm amber, gold & festive glow)
     const palettes = [
-      ['rgba(234, 185, 79, 0.65)', 'rgba(255, 255, 255, 0.45)', 'rgba(217, 74, 28, 0.35)'],
-      ['rgba(217, 74, 28, 0.70)', 'rgba(200, 21, 30, 0.55)', 'rgba(234, 185, 79, 0.45)'],
+      ['rgba(254, 215, 0, 0.65)', 'rgba(255, 255, 255, 0.45)', 'rgba(254, 215, 0, 0.30)'],
+      ['rgba(254, 215, 0, 0.60)', 'rgba(255, 255, 255, 0.40)', 'rgba(254, 215, 0, 0.35)'],
       ['rgba(234, 185, 79, 0.75)', 'rgba(245, 158, 11, 0.60)', 'rgba(255, 230, 160, 0.45)'],
     ];
 

@@ -17,7 +17,7 @@ function Field({ id, label, error, children }) {
       <label htmlFor={id} className="text-[12px] font-bold uppercase tracking-wider text-muted block mb-1.5">{label}</label>
       {children}
       {error && (
-        <p id={`${id}-err`} role="alert" className="flex items-center gap-1.5 text-[12px] text-brandRed mt-1.5">
+        <p id={`${id}-err`} role="alert" className="flex items-center gap-1.5 text-[12px] text-danger mt-1.5">
           <AlertCircle className="w-3.5 h-3.5 shrink-0" /> {error}
         </p>
       )}
@@ -76,7 +76,7 @@ export default function Login() {
   };
 
   const input = (err) =>
-    `w-full border ${err ? 'border-brandRed' : 'border-line'} bg-white px-4 py-3 text-[15px] outline-none focus:border-ink transition-colors`;
+    `w-full border ${err ? 'border-danger' : 'border-line'} bg-white px-4 py-3 text-[15px] outline-none focus:border-ink transition-colors`;
 
   const titles = { signin: 'WELCOME BACK', signup: 'CREATE YOUR ACCOUNT', forgot: 'RESET PASSWORD' };
 
@@ -85,7 +85,7 @@ export default function Login() {
       <div className="max-w-[1080px] mx-auto px-4 md:px-8 grid grid-cols-1 lg:grid-cols-2 shadow-xl">
         {/* Brand panel */}
         <aside className="relative bg-dark-grad text-white p-8 md:p-12 flex flex-col justify-between overflow-hidden">
-          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-40 blur-[80px]" style={{ background: 'radial-gradient(circle, #D94A1C, transparent 70%)' }} />
+          <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full opacity-40 blur-[80px]" style={{ background: 'radial-gradient(circle, rgba(254,215,0,0.6), transparent 70%)' }} />
           <div className="relative">
             <img src="/logo.png" alt="Cocktail Custom" className="w-16 h-16 rounded-full mb-8" />
             <h2 className="font-display text-4xl md:text-5xl leading-none">PRINT WHATEVER YOU IMAGINE.</h2>
@@ -150,23 +150,23 @@ export default function Login() {
               )}
 
               {mode === 'signin' && (
-                <button type="button" onClick={() => switchMode('forgot')} className="text-[13px] font-semibold text-brandRed hover:underline">Forgot your password?</button>
+                <button type="button" onClick={() => switchMode('forgot')} className="text-[13px] font-semibold text-ink underline decoration-brand decoration-2 underline-offset-2 hover:decoration-ink">Forgot your password?</button>
               )}
 
               {mode === 'signup' && (
                 <div>
                   <label className="flex items-start gap-3 text-[13px] text-muted cursor-pointer">
-                    <input type="checkbox" checked={form.agree} onChange={set('agree')} className="mt-0.5 w-4 h-4 accent-[#C8151E]" />
+                    <input type="checkbox" checked={form.agree} onChange={set('agree')} className="mt-0.5 w-4 h-4 accent-[#0B0B0B]" />
                     <span>I agree to the <Link to="/policy/terms" className="text-ink underline">Terms of Service</Link> and <Link to="/policy/privacy" className="text-ink underline">Privacy Policy</Link>.</span>
                   </label>
-                  {errors.agree && <p role="alert" className="flex items-center gap-1.5 text-[12px] text-brandRed mt-1.5"><AlertCircle className="w-3.5 h-3.5" /> {errors.agree}</p>}
+                  {errors.agree && <p role="alert" className="flex items-center gap-1.5 text-[12px] text-danger mt-1.5"><AlertCircle className="w-3.5 h-3.5" /> {errors.agree}</p>}
                 </div>
               )}
 
-              {formError && <p role="alert" className="text-[13px] text-brandRed">{formError}</p>}
+              {formError && <p role="alert" className="text-[13px] text-danger">{formError}</p>}
 
               <button type="submit" disabled={busy}
-                className="w-full py-4 rounded-full bg-button-grad text-white font-bold text-[13px] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-70 flex items-center justify-center gap-2">
+                className="w-full py-4 rounded-full bg-button-grad text-ink font-bold text-[13px] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition-all disabled:opacity-70 flex items-center justify-center gap-2">
                 {busy && <Loader2 className="w-4 h-4 animate-spin" />}
                 {mode === 'signin' ? 'Sign in' : mode === 'signup' ? 'Create account' : 'Send reset link'}
               </button>
@@ -174,7 +174,7 @@ export default function Login() {
           )}
 
           {mode === 'forgot' && (
-            <button onClick={() => switchMode('signin')} className="mt-6 text-[13px] font-semibold text-ink hover:text-brandRed">← Back to sign in</button>
+            <button onClick={() => switchMode('signin')} className="mt-6 text-[13px] font-semibold text-ink hover:underline decoration-brand decoration-2 underline-offset-4">← Back to sign in</button>
           )}
 
           <p className="flex items-center gap-2 text-[12px] text-muted mt-8"><Lock className="w-3.5 h-3.5" /> Your details are used only to manage your orders.</p>

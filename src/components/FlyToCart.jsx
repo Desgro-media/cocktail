@@ -45,7 +45,7 @@ export default function FlyToCart() {
             duration: 0.75,
             ease: [0.2, 0.75, 0.2, 1],
           }}
-          className="fixed pointer-events-none z-[9999] w-28 h-36 rounded-lg overflow-hidden border-2 border-brandRed shadow-2xl bg-white"
+          className="fixed pointer-events-none z-[9999] w-28 h-36 rounded-lg overflow-hidden border-2 border-brand shadow-2xl bg-white"
         >
           <img
             src={flyingItem.imageSrc}

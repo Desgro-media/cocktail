@@ -53,7 +53,7 @@ export default function SortMenu({ value, onChange, options }) {
                   setOpen(false);
                 }}
                 className={`w-full flex items-center justify-between px-4 py-3 text-left text-[12px] font-bold uppercase tracking-wider transition-colors ${
-                  o.value === value ? 'text-brandRed' : 'text-ink hover:bg-mist'
+                  o.value === value ? 'text-ink bg-brand/30' : 'text-ink hover:bg-mist'
                 }`}
               >
                 {o.label}

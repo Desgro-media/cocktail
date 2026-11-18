@@ -60,7 +60,7 @@ export default function Preloader() {
           exit={{ y: '-100%', transition: { duration: 0.8, ease: [0.76, 0, 0.24, 1] } }}
         >
           {/* Soft glow */}
-          <div className="absolute w-[420px] h-[420px] max-w-[90vw] max-h-[90vw] rounded-full bg-brandRed/20 blur-2xl md:blur-3xl" />
+          <div className="absolute w-[420px] h-[420px] max-w-[90vw] max-h-[90vw] rounded-full bg-brand/10 blur-2xl md:blur-3xl" />
 
           {/* Logo with pulsing rings */}
           <motion.div
@@ -71,14 +71,14 @@ export default function Preloader() {
           >
             <span className="absolute inset-0 rounded-full border-2 border-gold/60 animate-pulse-ring" />
             <span
-              className="absolute inset-0 rounded-full border-2 border-brandRed/60 animate-pulse-ring"
+              className="absolute inset-0 rounded-full border-2 border-brand/60 animate-pulse-ring"
               style={{ animationDelay: '1.3s' }}
             />
             <motion.div
               className="absolute -inset-2 rounded-full"
               style={{
                 background:
-                  'conic-gradient(from 0deg, transparent 0deg, #EAB94F 90deg, #C8151E 180deg, transparent 270deg)',
+                  'conic-gradient(from 0deg, transparent 0deg, #FFFFFF 90deg, #FED700 180deg, transparent 270deg)',
                 WebkitMask: 'radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))',
                 mask: 'radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 2px))',
               }}

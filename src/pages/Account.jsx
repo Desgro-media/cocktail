@@ -30,11 +30,11 @@ export default function Account() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <section className="md:col-span-2 bg-white border border-line p-6 md:p-8">
-            <h2 className="font-display text-2xl flex items-center gap-2 mb-4"><Package className="w-5 h-5 text-brandRed" /> YOUR ORDERS</h2>
+            <h2 className="font-display text-2xl flex items-center gap-2 mb-4"><Package className="w-5 h-5 text-ink" /> YOUR ORDERS</h2>
             <div className="border border-dashed border-line p-8 text-center">
               <p className="font-display text-xl mb-1">NO ORDERS YET</p>
               <p className="text-muted text-[14px] mb-5">When you place an order, you can follow it here.</p>
-              <Link to="/shop" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-white text-[12px] font-bold uppercase tracking-wider hover:bg-brandRed transition-colors">
+              <Link to="/shop" className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-ink text-white text-[12px] font-bold uppercase tracking-wider hover:bg-brand hover:text-ink transition-colors">
                 Start shopping <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
@@ -42,13 +42,13 @@ export default function Account() {
 
           <div className="space-y-4">
             <section className="bg-white border border-line p-6">
-              <h2 className="font-display text-xl flex items-center gap-2 mb-2"><MapPin className="w-5 h-5 text-brandRed" /> ADDRESSES</h2>
+              <h2 className="font-display text-xl flex items-center gap-2 mb-2"><MapPin className="w-5 h-5 text-ink" /> ADDRESSES</h2>
               <p className="text-muted text-[13px]">Saved addresses, including international ones, will appear here.</p>
             </section>
             <section className="bg-white border border-line p-6">
-              <h2 className="font-display text-xl flex items-center gap-2 mb-2"><ShieldCheck className="w-5 h-5 text-brandRed" /> PRIVACY</h2>
+              <h2 className="font-display text-xl flex items-center gap-2 mb-2"><ShieldCheck className="w-5 h-5 text-ink" /> PRIVACY</h2>
               <p className="text-muted text-[13px] mb-3">You can ask us to export or delete your data at any time.</p>
-              <a href={BRAND.whatsapp} target="_blank" rel="noreferrer" className="text-[13px] font-bold text-brandRed hover:underline">Contact us about my data</a>
+              <a href={BRAND.whatsapp} target="_blank" rel="noreferrer" className="text-[13px] font-bold text-ink underline decoration-brand decoration-2 underline-offset-2 hover:decoration-ink">Contact us about my data</a>
             </section>
           </div>
         </div>

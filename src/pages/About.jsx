@@ -20,14 +20,14 @@ export default function About() {
           <h2 className="font-display text-3xl md:text-4xl mb-6">WHAT WE MAKE</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {CATEGORIES.map((c) => (
-              <Link key={c.id} to={`/shop?category=${c.id}`} className="p-6 bg-white border border-line hover:border-brandRed transition-colors">
+              <Link key={c.id} to={`/shop?category=${c.id}`} className="p-6 bg-white border border-line hover:border-ink transition-colors">
                 <h3 className="font-display text-xl ">{c.name}</h3>
                 <p className="text-sm text-muted">{c.desc}</p>
               </Link>
             ))}
           </div>
           <a href={BRAND.instagram} target="_blank" rel="noreferrer"
-            className="inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full bg-ink text-white font-bold text-[13px] uppercase tracking-wider hover:bg-brandRed transition-colors">
+            className="inline-flex items-center gap-2 mt-10 px-6 py-3 rounded-full bg-ink text-white font-bold text-[13px] uppercase tracking-wider hover:bg-brand hover:text-ink transition-colors">
             <Camera className="w-4 h-4" /> See our work on Instagram
           </a>
         </div>

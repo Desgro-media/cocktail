@@ -16,7 +16,7 @@ export default function AnnouncementBar() {
   }, []);
 
   return (
-    <div className="h-[30px] w-full animate-announcement-gradient text-white flex items-center justify-center overflow-hidden px-4 text-center select-none z-40 relative">
+    <div className="h-[30px] w-full animate-announcement-gradient text-ink flex items-center justify-center overflow-hidden px-4 text-center select-none z-40 relative">
       <AnimatePresence mode="wait">
         <motion.div
           key={index}

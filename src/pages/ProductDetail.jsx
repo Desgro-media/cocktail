@@ -45,7 +45,7 @@ export default function ProductDetail() {
     return (
       <div className="py-32 text-center">
         <h1 className="font-display text-4xl mb-4">PRODUCT NOT FOUND</h1>
-        <Link to="/shop" className="text-brandRed font-bold uppercase text-sm">Back to shop</Link>
+        <Link to="/shop" className="text-ink underline decoration-brand decoration-[3px] underline-offset-4 font-bold uppercase text-sm">Back to shop</Link>
       </div>
     );
   }
@@ -71,7 +71,7 @@ export default function ProductDetail() {
     <div className="bg-mist py-10 md:py-16">
       <div className="max-w-[1200px] mx-auto px-4 md:px-10">
         <p className="text-[12px] uppercase tracking-wider text-muted mb-6">
-          <Link to="/shop" className="hover:text-brandRed">Shop</Link> / <Link to={`/shop?for=${section}`} className="hover:text-brandRed">{sectionName(section)}</Link> / <Link to={`/shop?for=${section}&category=${product.category}`} className="hover:text-brandRed">{category}</Link>
+          <Link to="/shop" className="hover:underline decoration-brand decoration-2 underline-offset-4">Shop</Link> / <Link to={`/shop?for=${section}`} className="hover:underline decoration-brand decoration-2 underline-offset-4">{sectionName(section)}</Link> / <Link to={`/shop?for=${section}&category=${product.category}`} className="hover:underline decoration-brand decoration-2 underline-offset-4">{category}</Link>
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-14">
@@ -83,7 +83,7 @@ export default function ProductDetail() {
               <div className="flex gap-2 mt-3 overflow-x-auto no-scrollbar">
                 {product.images.map((src, i) => (
                   <button key={src} onClick={() => setActive(i)}
-                    className={`shrink-0 w-16 h-20 md:w-20 md:h-24 border overflow-hidden ${i === active ? 'border-brandRed' : 'border-line'}`}>
+                    className={`shrink-0 w-16 h-20 md:w-20 md:h-24 border overflow-hidden ${i === active ? 'border-ink border-2' : 'border-line'}`}>
                     <ProductImage src={src} alt="" label="" className="w-full h-full object-cover" />
                   </button>
                 ))}
@@ -92,7 +92,7 @@ export default function ProductDetail() {
           </div>
 
           <div>
-            {product.badge && <span className="bg-brandRed text-white text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider">{product.badge}</span>}
+            {product.badge && <span className="bg-brand text-ink text-[10px] font-bold px-2.5 py-1 uppercase tracking-wider">{product.badge}</span>}
             <h1 className="font-display text-4xl md:text-5xl leading-[0.95] mt-3">{product.name}</h1>
             <p className="text-muted mt-2">{product.tagline}</p>
 
@@ -101,14 +101,14 @@ export default function ProductDetail() {
               {off > 0 && (
                 <>
                   <span className="text-muted line-through">₹{product.mrp.toLocaleString()}</span>
-                  <span className="text-[11px] font-bold text-brandRed border border-brandRed px-2 py-0.5">{off}% OFF</span>
+                  <span className="text-[11px] font-bold bg-brand text-ink px-2 py-0.5">{off}% OFF</span>
                 </>
               )}
             </div>
 
             <div className="mt-7 scroll-mt-28" ref={sizeRef}>
               <p className="text-[12px] font-bold uppercase tracking-wider mb-2">
-                Size {needSize && !size && <span className="text-brandRed normal-case tracking-normal ml-2">Please choose a size</span>}
+                Size {needSize && !size && <span className="text-danger normal-case tracking-normal ml-2">Please choose a size</span>}
               </p>
               <div className="flex flex-wrap gap-2">
                 {product.sizes.map((s) => (
@@ -129,7 +129,7 @@ export default function ProductDetail() {
                 <button onClick={() => setQty(qty + 1)} className="w-10 h-12" aria-label="Increase">+</button>
               </div>
               <button onClick={add}
-                className="flex-1 h-12 rounded-full bg-button-grad text-white font-bold text-[13px] uppercase tracking-wider hover:brightness-110 active:scale-[0.98] transition">
+                className="flex-1 h-12 rounded-full bg-button-grad text-ink font-bold text-[13px] uppercase tracking-wider hover:brightness-110 active:scale-[0.98] transition">
                 Add to bag
               </button>
             </div>
@@ -142,7 +142,7 @@ export default function ProductDetail() {
             <p className="mt-8 text-[15px] leading-relaxed text-ink/80">{product.description}</p>
             <ul className="mt-4 space-y-2">
               {product.details.map((d) => (
-                <li key={d} className="flex items-start gap-2 text-[14px]"><Check className="w-4 h-4 text-brandRed mt-0.5 shrink-0" />{d}</li>
+                <li key={d} className="flex items-start gap-2 text-[14px]"><Check className="w-4 h-4 text-ink mt-0.5 shrink-0" />{d}</li>
               ))}
             </ul>
           </div>
@@ -187,7 +187,7 @@ export default function ProductDetail() {
             </p>
           </div>
           <button onClick={add}
-            className="shrink-0 h-11 px-6 rounded-full bg-button-grad text-white font-bold text-[12px] uppercase tracking-wider active:scale-[0.98] transition">
+            className="shrink-0 h-11 px-6 rounded-full bg-button-grad text-ink font-bold text-[12px] uppercase tracking-wider active:scale-[0.98] transition">
             {size ? 'Add to bag' : 'Select size'}
           </button>
         </div>

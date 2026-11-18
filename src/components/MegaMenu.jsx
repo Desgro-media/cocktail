@@ -25,9 +25,9 @@ export default function MegaMenu({ onClose }) {
                 key={s.id}
                 to={`/shop?for=${s.id}`}
                 onClick={onClose}
-                className="p-4 border border-line hover:border-brandRed hover:bg-mist transition-colors group"
+                className="p-4 border border-line hover:border-ink hover:bg-mist transition-colors group"
               >
-                <span className="font-display text-lg text-ink group-hover:text-brandRed block">{s.name}</span>
+                <span className="font-display text-lg text-ink group-hover:underline decoration-brand decoration-[3px] underline-offset-4 block">{s.name}</span>
                 <span className="text-[12px] text-muted">{s.desc}</span>
               </Link>
             ))}
@@ -39,9 +39,9 @@ export default function MegaMenu({ onClose }) {
                 key={c.id}
                 to={`/shop?category=${c.id}`}
                 onClick={onClose}
-                className="p-4 border border-line hover:border-brandRed hover:bg-mist transition-colors group"
+                className="p-4 border border-line hover:border-ink hover:bg-mist transition-colors group"
               >
-                <span className="font-display text-lg text-ink group-hover:text-brandRed block">{c.name}</span>
+                <span className="font-display text-lg text-ink group-hover:underline decoration-brand decoration-[3px] underline-offset-4 block">{c.name}</span>
                 <span className="text-[12px] text-muted">{c.desc}</span>
               </Link>
             ))}
@@ -49,7 +49,7 @@ export default function MegaMenu({ onClose }) {
           <Link
             to="/shop"
             onClick={onClose}
-            className="inline-flex items-center gap-1 mt-5 text-[13px] font-bold uppercase tracking-wider text-brandRed group"
+            className="inline-flex items-center gap-1 mt-5 text-[13px] font-bold uppercase tracking-wider text-ink underline decoration-brand decoration-[3px] underline-offset-4 group"
           >
             View everything <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Link>
@@ -59,7 +59,7 @@ export default function MegaMenu({ onClose }) {
           <div className="aspect-[4/5] max-h-[260px] w-full overflow-hidden bg-mist">
             <ProductImage src={featured.images[0]} alt={featured.name} label={featured.name} className="w-full h-full object-cover" />
           </div>
-          <span className="font-display text-xl mt-3 block group-hover:text-brandRed">{featured.name}</span>
+          <span className="font-display text-xl mt-3 block group-hover:underline decoration-brand decoration-[3px] underline-offset-4">{featured.name}</span>
           <span className="text-sm font-bold">₹{featured.price}</span>
         </Link>
       </div>

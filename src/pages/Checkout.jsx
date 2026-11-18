@@ -78,7 +78,7 @@ export default function Checkout() {
 
           {!user && (
             <p className="text-[13px] bg-mist border border-line px-3 py-2">
-              Have an account? <Link to="/login" state={{ from: '/checkout' }} className="font-bold text-brandRed hover:underline">Sign in</Link> to fill in your details. You can also order as a guest.
+              Have an account? <Link to="/login" state={{ from: '/checkout' }} className="font-bold text-ink underline decoration-brand decoration-2 underline-offset-2 hover:decoration-ink">Sign in</Link> to fill in your details. You can also order as a guest.
             </p>
           )}
 
@@ -128,7 +128,7 @@ export default function Checkout() {
             {isPaymentConfigured() ? (
               <>
                 <button type="button" onClick={payOnline} disabled={busy || !shippable}
-                  className="w-full py-4 rounded-full bg-button-grad text-white font-bold text-[13px] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition disabled:opacity-60 flex items-center justify-center gap-2">
+                  className="w-full py-4 rounded-full bg-button-grad text-ink font-bold text-[13px] uppercase tracking-widest hover:brightness-110 active:scale-[0.98] transition disabled:opacity-60 flex items-center justify-center gap-2">
                   <CreditCard className="w-5 h-5" /> Pay securely online
                 </button>
                 <p className="flex items-center gap-2 text-[12px] text-muted"><Lock className="w-3.5 h-3.5" /> Card details are entered on our payment partner's secure page. We never see or store them.</p>

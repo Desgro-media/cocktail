@@ -43,14 +43,14 @@ export default function Shop() {
 
   const chip = (active, small) =>
     `${small ? 'px-3.5 py-1.5 text-[11px]' : 'px-4 py-2 text-[12px]'} rounded-full font-bold uppercase tracking-wider border transition-colors whitespace-nowrap shrink-0 ${
-      active ? 'bg-ink text-white border-ink' : 'bg-white text-ink border-line hover:border-brandRed'
+      active ? 'bg-ink text-white border-ink' : 'bg-white text-ink border-line hover:border-ink'
     }`;
   const row = 'flex gap-2 overflow-x-auto no-scrollbar pb-1 -mx-4 px-4 md:mx-0 md:px-0';
 
   return (
     <div className="bg-mist min-h-screen py-12 md:py-16">
       <div className="max-w-[1320px] mx-auto px-4 md:px-10">
-        <span className="text-[12px] font-bold text-brandRed uppercase tracking-[0.2em] block mb-1">THE COLLECTION</span>
+        <span className="inline-block bg-brand text-ink px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.2em] mb-2">THE COLLECTION</span>
         <h1 className="font-display text-4xl md:text-6xl text-ink mb-8">{current ? current.name : 'SHOP ALL'}</h1>
 
         <div className="space-y-3 mb-8">

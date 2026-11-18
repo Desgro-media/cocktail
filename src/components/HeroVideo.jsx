@@ -39,7 +39,7 @@ export default function HeroVideo({ src, poster, className = '' }) {
       <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
       <button
         onClick={() => setMuted((m) => !m)}
-        className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/30 text-white flex items-center justify-center hover:bg-brandRed transition-colors"
+        className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-black/50 backdrop-blur-md border border-white/30 text-white flex items-center justify-center hover:bg-brand hover:text-ink transition-colors"
         aria-label={muted ? 'Turn sound on' : 'Turn sound off'}
       >
         {muted ? <VolumeX className="w-4 h-4" /> : <Volume2 className="w-4 h-4" />}

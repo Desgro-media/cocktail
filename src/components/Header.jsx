@@ -47,7 +47,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="lg:hidden p-2 -ml-2 text-ink hover:text-brandRed transition-colors"
+              className="lg:hidden p-2 -ml-2 text-ink hover:bg-brand rounded-full transition-colors"
               aria-label="Open mobile menu"
             >
               <Menu className="w-6 h-6" />
@@ -65,12 +65,12 @@ export default function Header() {
                 <Link
                   to={item.path}
                   className={`relative text-[14px] font-semibold uppercase tracking-[0.12em] py-2 transition-colors ${
-                    location.pathname === item.path ? 'text-brandRed' : 'text-ink hover:text-brandRed'
+                    location.pathname === item.path ? 'text-ink' : 'text-ink/70 hover:text-ink'
                   }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-brandRed origin-left transition-transform duration-350 ease-luxury ${
+                    className={`absolute bottom-0 left-0 w-full h-[2px] bg-brand origin-left transition-transform duration-350 ease-luxury ${
                       location.pathname === item.path ? 'scale-x-100' : 'scale-x-0 hover:scale-x-100'
                     }`}
                   />
@@ -82,14 +82,14 @@ export default function Header() {
           <div className="flex items-center gap-2 md:gap-3">
             <button
               onClick={() => setIsSearchOpen(true)}
-              className="p-2 text-ink hover:text-brandRed transition-colors rounded-full hover:bg-mist cursor-pointer"
+              className="p-2 text-ink transition-colors rounded-full hover:bg-brand cursor-pointer"
               aria-label="Search products"
             >
               <Search className="w-5 h-5" />
             </button>
             <Link
               to={user ? '/account' : '/login'}
-              className="relative p-2 text-ink hover:text-brandRed transition-colors rounded-full hover:bg-mist"
+              className="relative p-2 text-ink transition-colors rounded-full hover:bg-brand"
               aria-label={user ? 'My account' : 'Sign in'}
             >
               <User className="w-5 h-5" />
@@ -98,7 +98,7 @@ export default function Header() {
             <button
               id="header-bag-btn"
               onClick={openCart}
-              className="relative p-2 text-ink hover:text-brandRed transition-colors rounded-full hover:bg-mist cursor-pointer group"
+              className="relative p-2 text-ink transition-colors rounded-full hover:bg-brand cursor-pointer group"
               aria-label={`Bag with ${totalCount} items`}
             >
               <ShoppingBag className="w-5 h-5 group-hover:scale-105 transition-transform" />
@@ -108,7 +108,7 @@ export default function Header() {
                   initial={{ scale: 0 }}
                   animate={badgeBump ? { scale: [1, 1.55, 1] } : { scale: 1 }}
                   transition={{ duration: 0.35, ease: [0.2, 0.75, 0.2, 1] }}
-                  className="absolute -top-0.5 -right-0.5 min-w-[19px] h-[19px] px-1 rounded-full bg-brandRed text-white text-[11px] font-bold flex items-center justify-center leading-none shadow-sm"
+                  className="absolute -top-0.5 -right-0.5 min-w-[19px] h-[19px] px-1 rounded-full bg-brand text-ink text-[11px] font-bold flex items-center justify-center leading-none shadow-sm"
                 >
                   {totalCount}
                 </motion.span>

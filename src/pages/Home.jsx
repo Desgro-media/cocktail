@@ -60,7 +60,7 @@ function HeroVideoBackground({ src, poster }) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/75 via-black/55 to-[#0B0B0E]" />
         <div className="absolute inset-0 bg-gradient-to-r from-black/50 to-transparent" />
       </div>
-      <span className="absolute top-4 right-4 z-20 bg-brandRed text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest shadow-lg">
+      <span className="absolute top-4 right-4 z-20 bg-brand text-ink text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest shadow-lg">
         Made to order
       </span>
       <button
@@ -88,7 +88,7 @@ export default function Home() {
           aria-hidden="true"
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(120% 90% at 50% -10%, #1A0D0E 0%, #0B0B0E 60%, #060608 100%)',
+            background: 'radial-gradient(120% 90% at 50% -10%, #1A1A1A 0%, #0B0B0B 60%, #050505 100%)',
           }}
         />
 
@@ -99,7 +99,7 @@ export default function Home() {
           aria-hidden="true"
           className="absolute right-[-5%] top-1/2 -translate-y-1/2 w-[420px] md:w-[680px] h-[420px] md:h-[680px] rounded-full pointer-events-none opacity-30 blur-[110px]"
           style={{
-            background: 'radial-gradient(circle, #D94A1C 0%, #C8151E 45%, #EAB94F 80%, transparent 100%)',
+            background: 'radial-gradient(circle, rgba(254,215,0,0.55) 0%, rgba(254,215,0,0.18) 45%, transparent 75%)',
           }}
         />
 
@@ -108,7 +108,7 @@ export default function Home() {
           aria-hidden="true"
           className="absolute -top-24 -left-24 w-[360px] md:w-[500px] h-[360px] md:h-[500px] rounded-full pointer-events-none opacity-20 blur-[100px]"
           style={{
-            background: 'radial-gradient(circle, #C8151E 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(254,215,0,0.35) 0%, transparent 70%)',
           }}
         />
 
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="relative z-10 max-w-[1320px] mx-auto px-4 md:px-10 pt-14 pb-20 md:pt-16 md:pb-24 min-h-[calc(100svh-96px)] lg:min-h-0 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
           <div className="lg:col-span-7">
             <motion.div initial={{ opacity: 0, y: 15 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="mb-6">
-              <span className="inline-flex px-3 py-1 rounded-full bg-brandRed/30 border border-brandRed text-gold font-bold text-[11px] md:text-[12px] uppercase tracking-[0.2em] items-center gap-1.5">
+              <span className="inline-flex px-3 py-1 rounded-full bg-brand/10 border border-brand/60 text-brand font-bold text-[11px] md:text-[12px] uppercase tracking-[0.2em] items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-gold" /> CUSTOM CLOTHING • TRIVANDRUM
               </span>
             </motion.div>
@@ -154,7 +154,7 @@ export default function Home() {
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.3, ease: [0.2, 0.75, 0.2, 1] }} className="flex flex-wrap items-center gap-4 mt-8">
-              <a href={BRAND.whatsapp} target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full bg-button-grad text-white font-bold text-[13px] md:text-[14px] uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-xl flex items-center gap-2">
+              <a href={BRAND.whatsapp} target="_blank" rel="noreferrer" className="px-8 py-4 rounded-full bg-button-grad text-ink font-bold text-[13px] md:text-[14px] uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-xl flex items-center gap-2">
                 <WhatsAppIcon className="w-4 h-4" /> <span>START YOUR ORDER</span>
               </a>
               <Link to="/shop" className="px-8 py-4 rounded-full border-2 border-white text-white font-bold text-[13px] md:text-[14px] uppercase tracking-widest hover:bg-white hover:text-ink active:scale-95 transition-all flex items-center gap-2 group">
@@ -178,7 +178,7 @@ export default function Home() {
             <div className="relative w-[270px] sm:w-[310px] xl:w-[340px]">
               <div className="absolute -inset-3 border border-gold/40 translate-x-4 translate-y-4 pointer-events-none" />
               <HeroVideo src={HERO_VIDEO.src} poster={HERO_VIDEO.poster} className="relative aspect-[9/16] border border-white/20 shadow-2xl" />
-              <span className="absolute -left-3 top-8 bg-brandRed text-white text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest shadow-lg">Made to order</span>
+              <span className="absolute -left-3 top-8 bg-brand text-ink text-[10px] font-bold px-3 py-1.5 uppercase tracking-widest shadow-lg">Made to order</span>
             </div>
           </motion.div>
           )}
@@ -194,7 +194,7 @@ export default function Home() {
             { icon: Truck, t: 'Ships all over India', d: 'Printed in Trivandrum, Kerala' },
           ].map(({ icon: Icon, t, d }) => (
             <div key={t} className="flex items-center gap-3">
-              <span className="w-10 h-10 rounded-full bg-brandRed/20 flex items-center justify-center shrink-0"><Icon className="w-5 h-5 text-gold" /></span>
+              <span className="w-10 h-10 rounded-full bg-brand/20 flex items-center justify-center shrink-0"><Icon className="w-5 h-5 text-gold" /></span>
               <div>
                 <p className="font-display text-base leading-tight">{t}</p>
                 <p className="text-[12px] text-white/60">{d}</p>
@@ -215,10 +215,10 @@ export default function Home() {
         <div className="max-w-[1320px] mx-auto px-4 md:px-10">
           <motion.div {...rise} className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
             <div>
-              <span className="text-[12px] font-bold text-brandRed uppercase tracking-[0.2em] block mb-1">FRESH FROM THE STUDIO</span>
+              <span className="inline-block bg-brand text-ink px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.2em] mb-2">FRESH FROM THE STUDIO</span>
               <h2 className="font-display text-4xl md:text-5xl uppercase text-ink">OUR COLLECTION</h2>
             </div>
-            <Link to="/shop" className="text-[13px] font-bold uppercase tracking-wider text-brandRed hover:text-deepRed flex items-center gap-1 group">
+            <Link to="/shop" className="text-[13px] font-bold uppercase tracking-wider text-ink underline decoration-brand decoration-[3px] underline-offset-4 hover:decoration-ink flex items-center gap-1 group">
               <span>Explore everything</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </Link>
@@ -239,17 +239,17 @@ export default function Home() {
             <img src="/story/print_craft_detail.jpg" alt="Close up of an Ayyappa Darshanam print on a black shirt" loading="lazy" className="w-full aspect-[3/4] object-cover mt-10" />
           </motion.div>
           <motion.div {...rise}>
-            <span className="text-[12px] font-bold text-brandRed uppercase tracking-[0.2em] block mb-1">THE DETAIL</span>
+            <span className="inline-block bg-brand text-ink px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.2em] mb-2">THE DETAIL</span>
             <h2 className="font-display text-4xl md:text-5xl uppercase text-ink">DESIGNED TO BE NOTICED UP CLOSE</h2>
             <p className="text-[15px] text-muted leading-relaxed mt-5 max-w-lg">
               From the artwork on the chest to the lettering on the back, every shirt is printed around the theme you choose. Temple festivals, Sabarimala season, family functions or your own idea.
             </p>
             <ul className="mt-6 space-y-3 text-[15px] text-ink">
               {['Front, back and pocket print options', 'Shirt and mund combos for functions', 'Kids sizes 20 to 38 and matching dad and son sets'].map((t) => (
-                <li key={t} className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-brandRed shrink-0" />{t}</li>
+                <li key={t} className="flex items-start gap-3"><span className="mt-2 w-2 h-2 rounded-full bg-brand shrink-0" />{t}</li>
               ))}
             </ul>
-            <a href={BRAND.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-full bg-ink text-white font-bold text-[13px] uppercase tracking-widest hover:bg-brandRed transition-colors">
+            <a href={BRAND.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-8 px-8 py-4 rounded-full bg-ink text-white font-bold text-[13px] uppercase tracking-widest hover:bg-brand hover:text-ink transition-colors">
               <WhatsAppIcon className="w-4 h-4" /> Share your design
             </a>
           </motion.div>
@@ -263,7 +263,7 @@ export default function Home() {
         <div className="max-w-[900px] mx-auto px-4 relative z-10">
           <h2 className="font-display text-4xl md:text-6xl">HAVE A DESIGN IN MIND?</h2>
           <p className="text-white/75 text-[16px] mt-4 max-w-xl mx-auto">Message us on WhatsApp with your idea. We will confirm the design, sizes and price with you before printing.</p>
-          <a href={BRAND.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-8 px-10 py-4 rounded-full bg-button-grad text-white font-bold text-[14px] uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-xl">
+          <a href={BRAND.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 mt-8 px-10 py-4 rounded-full bg-button-grad text-ink font-bold text-[14px] uppercase tracking-widest hover:brightness-110 active:scale-95 transition-all shadow-xl">
             <WhatsAppIcon className="w-4 h-4" /> Start your order
           </a>
         </div>

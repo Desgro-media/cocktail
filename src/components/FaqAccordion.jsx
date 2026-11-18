@@ -9,7 +9,7 @@ export default function FaqAccordion({ items = FAQS, title = 'FREQUENTLY ASKED Q
     <section className="py-20 md:py-24 bg-mist border-t border-line">
       <div className="max-w-[1000px] mx-auto px-4 md:px-8">
         <div className="text-center mb-12">
-          <span className="text-[12px] font-bold uppercase tracking-[0.2em] text-brandRed">{subtitle}</span>
+          <span className="inline-block bg-brand text-ink px-2 py-0.5 text-[11px] font-bold uppercase tracking-[0.2em]">{subtitle}</span>
           <h2 className="font-display text-4xl md:text-5xl uppercase tracking-wider text-ink mt-1">{title}</h2>
         </div>
         <div className="space-y-3">
@@ -19,7 +19,7 @@ export default function FaqAccordion({ items = FAQS, title = 'FREQUENTLY ASKED Q
               <div
                 key={faq.id}
                 className={`transition-colors duration-400 border border-line ${
-                  isOpen ? 'bg-brandRed text-white border-brandRed shadow-lg' : 'bg-white text-ink hover:border-brandRed'
+                  isOpen ? 'bg-ink text-white border-ink shadow-lg' : 'bg-white text-ink hover:border-ink'
                 }`}
               >
                 <button

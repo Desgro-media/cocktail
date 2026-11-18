@@ -47,7 +47,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
                 <div className="flex flex-wrap gap-2">
                   {[...SECTION_LINKS.map((c) => ({ ...c, to: `/shop?for=${c.id}` })), ...CATEGORIES.map((c) => ({ ...c, to: `/shop?category=${c.id}` }))].map((c) => (
                     <Link key={c.id} to={c.to} onClick={onClose}
-                      className="px-4 py-2 rounded-full border border-line hover:border-brandRed hover:text-brandRed text-sm font-semibold uppercase tracking-wider">
+                      className="px-4 py-2 rounded-full border border-line hover:border-ink hover:bg-brand text-sm font-semibold uppercase tracking-wider">
                       {c.name}
                     </Link>
                   ))}
@@ -63,7 +63,7 @@ export default function SearchOverlay({ isOpen, onClose }) {
                 <div className="space-y-3">
                   {results.map((p) => (
                     <Link key={p.id} to={`/product/${p.slug}`} onClick={onClose}
-                      className="flex items-center gap-4 p-3 border border-line hover:border-brandRed">
+                      className="flex items-center gap-4 p-3 border border-line hover:border-ink">
                       <ProductImage src={p.images[0]} alt={p.name} label="" className="w-16 h-20 object-cover shrink-0" />
                       <div>
                         <span className="font-display text-lg block">{p.name}</span>

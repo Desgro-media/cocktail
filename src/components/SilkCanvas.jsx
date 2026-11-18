@@ -18,7 +18,7 @@ export default function SilkCanvas() {
     resize();
     window.addEventListener('resize', resize);
 
-    const colors = ['rgba(200,21,30,0.22)', 'rgba(217,74,28,0.18)', 'rgba(234,185,79,0.14)', 'rgba(116,27,19,0.30)'];
+    const colors = ['rgba(254,215,0,0.16)', 'rgba(255,255,255,0.08)', 'rgba(254,215,0,0.10)', 'rgba(40,40,40,0.30)'];
 
     const draw = () => {
       const { width: w, height: h } = canvas;

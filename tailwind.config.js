@@ -11,11 +11,10 @@ export default {
         mist: "#F5F4F2",
         line: "#E7E4E0",
         muted: "#6C6763",
-        brandRed: "#C8151E",
-        deepRed: "#741B13",
-        ember: "#D94A1C",
-        gold: "#EAB94F",
-        wine: "#2E0001",
+        brand: "#FED700",      // logo yellow
+        brandDark: "#E6C200",
+        gold: "#FED700",       // alias kept for older classes
+        danger: "#D92D20",     // errors only
         footerBlack: "#121010",
         whatsapp: "#1FAA59",
       },
@@ -24,9 +23,9 @@ export default {
         sans: ['"Poppins"', 'sans-serif'],
       },
       backgroundImage: {
-        'signature-grad': 'linear-gradient(10deg, #741B13 0%, #C8151E 32%, #D94A1C 62%, #EAB94F 100%)',
-        'button-grad': 'linear-gradient(90deg, #8F0F17 0%, #C8151E 34%, #D94A1C 70%, #E79A3D 100%)',
-        'dark-grad': 'linear-gradient(180deg, #2E0001 0%, #120404 60%, #0B0B0B 100%)',
+        'signature-grad': 'linear-gradient(90deg, #FED700 0%, #FFE866 50%, #FFFFFF 100%)',
+        'button-grad': 'linear-gradient(90deg, #FED700 0%, #FFE13A 100%)',
+        'dark-grad': 'linear-gradient(180deg, #1A1A1A 0%, #0E0E0E 60%, #0B0B0B 100%)',
       },
       transitionTimingFunction: {
         'luxury': 'cubic-bezier(0.2, 0.75, 0.2, 1)',
