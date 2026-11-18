@@ -1,0 +1,18 @@
+# Dependencies and build output
+node_modules/
+dist/
+
+# Raw, uncompressed footage (355MB). The site uses the compressed copies in public/videos/.
+source-media/
+
+# Environment / secrets
+.env
+.env.*
+!.env.example
+
+# Logs and OS/editor files
+*.log
+npm-debug.log*
+.DS_Store
+.vscode/
+.idea/

@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Butler by Fabian De Smet (free licence, see /fonts/butler/Butler-EULA-v2-00.pdf, www.fabiandesmet.com) */
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/Butler-Free-Rmn.woff2') format('woff2'),
+       url('/fonts/butler/Butler-Free-Rmn.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/Butler-Free-Med.woff2') format('woff2'),
+       url('/fonts/butler/Butler-Free-Med.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/Butler-Free-Bd.woff2') format('woff2'),
+       url('/fonts/butler/Butler-Free-Bd.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/Butler-Free-XBd.woff2') format('woff2'),
+       url('/fonts/butler/Butler-Free-XBd.woff') format('woff');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Butler';
+  src: url('/fonts/butler/Butler-Free-Blk.woff2') format('woff2'),
+       url('/fonts/butler/Butler-Free-Blk.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --ink: #0B0B0B;
+  --mist: #F5F4F2;
+  --line: #E7E4E0;
+  --muted: #6C6763;
+  --brand-red: #C8151E;
+  --deep-red: #741B13;
+  --ember: #D94A1C;
+  --gold: #EAB94F;
+  --wine: #2E0001;
+  --footer-black: #121010;
+  --whatsapp: #1FAA59;
+  --ease-luxury: cubic-bezier(0.2, 0.75, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  background-color: var(--mist);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F4F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #C8151E;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #741B13;
+}
+
+/* Hide scrollbars on horizontal chip/carousel rows (still swipeable) */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile tuning */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+a,
+button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+@media (max-width: 767px) {
+  /* iOS Safari zooms into any field under 16px when it is focused */
+  input,
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Luxury Display Typography */
+/* Display headings: change the font here and in tailwind.config.js + index.html */
+.font-display {
+  font-family: 'Butler', 'Times New Roman', serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 1.02;
+  letter-spacing: 0.005em;
+}
+
+/* Finer line icons site-wide */
+svg.lucide {
+  stroke-width: 1.6;
+}
+
+/* Keyframes for announcement bar gradient slide */
+@keyframes shiftGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-announcement-gradient {
+  background: linear-gradient(90deg, #741B13, #C8151E, #D94A1C, #EAB94F, #C8151E);
+  background-size: 300% 300%;
+  animation: shiftGradient 12s ease-in-out infinite alternate;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Shimmer on add to cart button */
+@keyframes buttonShimmer {
+  0% {
+    transform: translateX(-150%) skewX(-20deg);
+  }
+  100% {
+    transform: translateX(250%) skewX(-20deg);
+  }
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+  animation: buttonShimmer 3.4s infinite ease-in-out;
+  pointer-events: none;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .animate-announcement-gradient,
+  .animate-marquee,
+  .shimmer-effect::after {
+    animation: none !important;
+  }
+}
+
+/* Continuous video ticker (VideoGallery): track holds two copies, moves left by one copy then repeats */
+.gallery-marquee {
+  animation: marquee 50s linear infinite;
+  will-change: transform;
+}
+.gallery-marquee:hover,
+.gallery-marquee.is-paused {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .gallery-marquee { animation: none; }
+  .gallery-viewport { overflow-x: auto; }
+}
